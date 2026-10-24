@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://estantedigital.test/schemas/common/api-error.schema.json",
+  "type": "object",
+  "required": ["status", "message", "field"],
+  "properties": {
+    "status": {
+      "type": "integer",
+      "minimum": 400,
+      "maximum": 599
+    },
+    "message": {
+      "type": "string",
+      "minLength": 1
+    },
+    "field": {
+      "type": ["string", "null"]
+    }
+  },
+  "additionalProperties": false
+}

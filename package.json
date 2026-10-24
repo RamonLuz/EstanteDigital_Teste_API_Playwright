@@ -1,0 +1,39 @@
+{
+  "name": "estantedigital-api-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Testes de integração HTTP da API EstanteDigital com Playwright e TypeScript",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:bdd": "cucumber-js --config cucumber.cjs",
+    "test:bdd:smoke": "cucumber-js --config cucumber.cjs --tags @smoke",
+    "test:all": "npm run lint && npm run format:check && npm run typecheck && npm test && npm run test:bdd",
+    "test:report": "playwright show-report",
+    "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\" \"features/**/*.ts\" \"playwright.config.ts\" \"cucumber.cjs\" \"eslint.config.mjs\"",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"features/**/*.ts\" \"playwright.config.ts\" \"cucumber.cjs\" \"eslint.config.mjs\" \"**/*.json\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\" \"features/**/*.ts\" \"playwright.config.ts\" \"cucumber.cjs\" \"eslint.config.mjs\" \"**/*.json\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "13.3.0",
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.10.0",
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "dotenv": "16.4.7",
+    "eslint": "10.13.0",
+    "eslint-config-prettier": "10.1.8",
+    "globals": "17.13.0",
+    "prettier": "3.9.10",
+    "tree-kill": "1.2.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.0"
+  }
+}

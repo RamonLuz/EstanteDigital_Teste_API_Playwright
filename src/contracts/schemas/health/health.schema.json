@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://estantedigital.test/schemas/health/health.schema.json",
+  "type": "object",
+  "required": ["status", "application"],
+  "properties": {
+    "status": { "type": "string", "enum": ["UP"] },
+    "application": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

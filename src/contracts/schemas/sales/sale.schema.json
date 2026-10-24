@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://estantedigital.test/schemas/sales/sale.schema.json",
+  "type": "object",
+  "required": ["id", "customer", "employee", "book", "saleDate"],
+  "properties": {
+    "id": { "type": "integer", "minimum": 1 },
+    "customer": { "$ref": "../customers/customer.schema.json" },
+    "employee": { "$ref": "../employees/employee.schema.json" },
+    "book": { "$ref": "../books/book.schema.json" },
+    "saleDate": { "type": "string", "format": "date" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://estantedigital.test/schemas/customers/customer.schema.json",
+  "type": "object",
+  "required": ["id", "name", "cpf", "status", "purchases"],
+  "properties": {
+    "id": { "type": "integer", "minimum": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "cpf": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "minLength": 1 },
+    "purchases": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "array",
+          "items": { "$ref": "../books/book.schema.json" }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

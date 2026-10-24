@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://estantedigital.test/schemas/employees/employee.schema.json",
+  "type": "object",
+  "required": ["id", "name", "cpf", "registrationNumber", "position", "status"],
+  "properties": {
+    "id": { "type": "integer", "minimum": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "cpf": { "type": "string", "minLength": 1 },
+    "registrationNumber": { "type": "integer", "minimum": 1 },
+    "position": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}
